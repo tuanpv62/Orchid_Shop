@@ -26,7 +26,7 @@ function Nav_Menu() {
                     {/* <a href="#"></a> */}
                     <button
                       onClick={() => setOpenTab(1)}
-                      className={` w-full ${
+                      className={`hover:bg-green-500 w-full ${
                         openTab === 1 ? "bg-green-400 text-black" : "bg-white"
                       } inline-block px-4 py-2 text-gray-600  bg-green-500 rounded  `}
                     >
@@ -37,9 +37,9 @@ function Nav_Menu() {
                     {/* <a href="#"></a> */}
                     <button
                       onClick={() => setOpenTab(2)}
-                      className={` w-full ${
+                      className={`hover:bg-green-500 w-full ${
                         openTab === 2 ? "bg-green-400 text-black " : "bg-white"
-                      } inline-block px-4 py-2 text-gray-600 bg-white rounded `}
+                      } inline-block px-4 py-2 text-gray-600 bg-green-500  rounded `}
                     >
                       My Profile
                     </button>
@@ -47,9 +47,9 @@ function Nav_Menu() {
                   <li>
                     <button
                       onClick={() => setOpenTab(3)}
-                      className={` w-full ${
+                      className={`hover:bg-green-500 w-full ${
                         openTab === 3 ? "bg-green-400 text-black " : "bg-white"
-                      } inline-block px-4 py-2 text-gray-600 bg-white rounded `}
+                      } inline-block px-4 py-2 text-gray-600 bg-green-500 rounded `}
                     >
                       Order Biding
                     </button>
@@ -57,9 +57,9 @@ function Nav_Menu() {
                   <li>
                     <button
                       onClick={() => setOpenTab(4)}
-                      className={` w-full ${
+                      className={`hover:bg-green-500 w-full ${
                         openTab === 4 ? "bg-green-400 text-black " : "bg-white"
-                      } inline-block px-4 py-2 text-gray-600 bg-white rounded `}
+                      } inline-block px-4 py-2 text-gray-600 bg-green-500  rounded `}
                     >
                       Logout
                     </button>
