@@ -2,12 +2,16 @@
   "name": "auction-platform",
   "version": "0.1.0",
   "private": true,
+  "description": "Minible Node js",
+  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "@fullcalendar/daygrid": "^6.1.10",
     "@fullcalendar/interaction": "^6.1.10",
@@ -15,7 +19,7 @@
     "@fullcalendar/react": "^6.1.10",
     "@fullcalendar/timegrid": "^6.1.10",
     "@headlessui/react": "^1.7.18",
-    "@heroicons/react": "^2.1.1",
+    "@heroicons/react": "^1.0.6",
     "@hookform/resolvers": "^3.3.4",
     "@netlify/plugin-nextjs": "^4.41.3",
     "@radix-ui/react-avatar": "^1.0.4",
@@ -65,6 +69,7 @@
     "swiper": "^11.0.5",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
+    "tw-elements": "^1.1.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {

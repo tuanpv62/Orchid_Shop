@@ -1,88 +1,64 @@
 "use client";
 
 import * as React from "react";
-import Fillter_Table from "./_component_fillter/Fillter_Table";
+import { Tab, initTE } from "tw-elements";
 
-interface Order {
-  id: string;
-  amount: number;
-  status: string;
-  email: string;
-}
-
-fetch("dataOrder.json")
-  .then((response) => response.json())
-  .then((data: Order[]) => {
-    const tableBody = document.getElementById("table-body");
-    if (tableBody) {
-      tableBody.innerHTML = "";
-      data.forEach((order) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-                    <td class="border px-4 py-2">Image</td>
-                    <td class="border px-4 py-2">${order.id}</td>
-                    <td class="border px-4 py-2">${order.amount}</td>
-                    <td class="border px-4 py-2">Highest Bid</td>
-                    <td class="border px-4 py-2">${order.status}</td>
-                    <td class="border px-4 py-2">Action</td>
-                `;
-        tableBody.appendChild(row);
-      });
-    }
-  });
+initTE({ Tab });
 
 function Test() {
-  interface Order {
-    id: string;
-    amount: number;
-    status: string;
-    email: string;
-  }
-
-  // Đọc dữ liệu từ file JSON
-  fetch("dataOrder.json")
-    .then((response) => response.json())
-    .then((data: Order[]) => {
-      const tableBody = document.getElementById("table-body");
-      if (tableBody) {
-        tableBody.innerHTML = "";
-        data.forEach((order) => {
-          const row = document.createElement("tr");
-          row.innerHTML = `
-                    <td class="border px-4 py-2">Image</td>
-                    <td class="border px-4 py-2">${order.id}</td>
-                    <td class="border px-4 py-2">${order.amount}</td>
-                    <td class="border px-4 py-2">Highest Bid</td>
-                    <td class="border px-4 py-2">${order.status}</td>
-                    <td class="border px-4 py-2">Action</td>
-                `;
-          tableBody.appendChild(row);
-        });
-      }
-    });
-
+  const [openTab, setOpenTab] = React.useState(2);
   return (
-    <div>
-      <div className="flex justify-between items-center mb-4">
-        <h1 className="text-xl font-semibold">Order Bidding List</h1>
-        <div className="flex space-x-4">
-          <Fillter_Table />
+    <div className="flex">
+      <div className="container mx-auto mt-12 h-full w-1/5">
+        <div className="flex flex-row items-start justify-center max-w-xl gap-10">
+          <ul className="flex flex-col gap-5">
+            <li>
+              <a
+                href="#"
+                onClick={() => setOpenTab(1)}
+                className={` ${
+                  openTab === 1 ? "bg-purple-600 text-black bg-green-500  " : ""
+                } inline-block px-4 py-2 text-gray-600 bg-white rounded shadow`}
+              >
+                React Tabs 1
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={() => setOpenTab(2)}
+                className={` ${
+                  openTab === 2 ? "bg-purple-600 text-black bg-green-500 " : ""
+                } inline-block px-4 py-2 text-gray-600 bg-white rounded shadow`}
+              >
+                React Tabs 2
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={() => setOpenTab(3)}
+                className={` ${
+                  openTab === 3 ? "bg-purple-600 text-black bg-green-500 " : ""
+                } inline-block px-4 py-2 text-gray-600 bg-white rounded shadow`}
+              >
+                React Tabs 3
+              </a>
+            </li>
+          </ul>
+          <div className="p-3 mt-6 bg-white border">
+            <div className={openTab === 1 ? "block" : "hidden"}>
+              test 1 dashboard
+            </div>
+            <div className={openTab === 2 ? "block" : "hidden"}>
+              test 2 my profile
+            </div>
+            <div className={openTab === 3 ? "block" : "hidden"}>
+              test 3 check table
+            </div>
+          </div>
         </div>
       </div>
-
-      <table className="table-auto w-full border-collapse">
-        <thead>
-          <tr>
-            <th className="px-4 py-2">Image</th>
-            <th className="px-4 py-2">Biding Id</th>
-            <th className="px-4 py-2">Bid Amount (USD)</th>
-            <th className="px-4 py-2">Highest Bid</th>
-            <th className="px-4 py-2">Status</th>
-            <th className="px-4 py-2">Action</th>
-          </tr>
-        </thead>
-        <tbody id="table-body"></tbody>
-      </table>
     </div>
   );
 }

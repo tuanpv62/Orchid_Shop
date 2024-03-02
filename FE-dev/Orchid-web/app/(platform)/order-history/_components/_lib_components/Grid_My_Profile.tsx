@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import { EyeIcon, EyeOffIcon } from "@heroicons/react/solid";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { EyeIcon, EyeOffIcon } from "lucide-react";
 function Grid_My_Profile() {
   // State for form fields
   const [firstName, setFirstName] = useState("");
